@@ -12,6 +12,7 @@ public class AutoTurret : MonoBehaviour
     public Vector3 targetOffset;
     public bool targetAcquired = false;
     public bool onTarget;
+    public LayerMask targetLayer;
     //BULLET
     public Rigidbody bulletPrefab;
     public Transform bulletSpawn;
@@ -87,7 +88,7 @@ public class AutoTurret : MonoBehaviour
         }
         Vector3 fwd = bulletSpawn.TransformDirection(Vector3.forward);
         Debug.DrawRay(bulletSpawn.position, fwd * maxRange, Color.red);
-        if (Physics.Raycast(bulletSpawn.position, fwd, out hit, maxRange) && hit.transform.CompareTag(targetTag) && !isShooting)
+        if (Physics.Raycast(bulletSpawn.position, fwd, out hit, maxRange, targetLayer) && hit.transform.CompareTag(targetTag) && !isShooting)
         {
             StartCoroutine("shoot");
             onTarget = true;
