@@ -327,7 +327,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 2599517040382706774, guid: 52fa5cbcb1685844e97edb25c195a1a3, type: 3}
   bulletSpawn: {fileID: 955905665023871613}
   shootDelay: 0.05
   velocityMult: 50

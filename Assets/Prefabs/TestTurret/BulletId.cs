@@ -11,6 +11,13 @@ public class BulletId : MonoBehaviour
     public bool impactDestroy = true;
     public string[] surfaceTags;
     public GameObject[] impactPrefabs;
+    float timeToDestroy = 2f;
+
+    void Start()
+{
+Destroy(this.gameObject,timeToDestroy);
+}
+
     void OnCollisionEnter(Collision col)
     {
         //Debug.Log(col.gameObject + " : " + sender);
