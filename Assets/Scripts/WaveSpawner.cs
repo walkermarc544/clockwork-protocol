@@ -7,6 +7,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPos;
     public float spawnDelay = 5.0f;
     public float spawnVariance = 1.5f;
+    float timePassed = 0.0f;
     public float newRoundDelay = 15.0f;
     private int curRound;
     private int spawnCount;
@@ -22,10 +23,25 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isSpawning && spawnCount < spawnMax)
+
+        timePassed += Time.deltaTime;
+
+        if (!isSpawning && spawnCount < spawnMax)
         {
             StartCoroutine("Spawn");
         }
+
+        if (!isSpawning && spawnCount == spawnMax)
+        {
+
+            if (timePassed > 25.0f)
+            {
+                new WaitForSeconds(5);
+                spawnCount = 0;
+                timePassed = 0.0f;
+            }
+        }
+  
     }
     IEnumerator Spawn()
     {
