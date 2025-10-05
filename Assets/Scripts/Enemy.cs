@@ -10,12 +10,15 @@ public class Enemy : MonoBehaviour
     //HEALTH
     public int maxHealth = 100;
     public int curHealth = 100;
+    public GameObject resourceDrop;
+    int resourceChance;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         myAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag(targetTag).transform;
         curHealth = maxHealth;
+        resourceChance = Random.Range(1, 11);
     }
 
     // Update is called once per frame
@@ -27,6 +30,11 @@ public class Enemy : MonoBehaviour
         }
         if(curHealth <= 0)
         {
+            if (resourceChance == 1)
+            {
+            Instantiate(resourceDrop, transform.position, Quaternion.identity);
+            }
+            resourceChance = Random.Range(1, 11);
             Destroy(gameObject);
         }
     }
