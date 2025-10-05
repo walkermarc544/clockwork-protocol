@@ -16,17 +16,31 @@ void Awake ()
 }
 
 public GameObject standardTurretPrefab;
+public GameObject strongTurretPrefab;
+public GameObject healTurretPrefab;
 
 void Start()
 {
-    turretToBuild = standardTurretPrefab;
+    turretToBuild1 = standardTurretPrefab;
+    turretToBuild2 = strongTurretPrefab;
+    turretToBuild3 = healTurretPrefab;
     
 }
 
-    private GameObject turretToBuild;
+    private GameObject turretToBuild1;
+    private GameObject turretToBuild2;
+    private GameObject turretToBuild3;
 
-    public GameObject GetTurretToBuild ()
+    public GameObject GetTurretToBuild1 ()
     {
-        return turretToBuild;
+        return turretToBuild1;
+    }
+    public GameObject GetTurretToBuild2 ()
+    {
+        return turretToBuild2;
+    }
+    public GameObject GetTurretToBuild3 ()
+    {
+        return turretToBuild3;
     }
 }

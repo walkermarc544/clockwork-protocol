@@ -14,7 +14,7 @@ public class ResourcedSpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnResource());
+       StartCoroutine(SpawnResource());
     }
 
     IEnumerator SpawnResource()
@@ -23,7 +23,7 @@ public class ResourcedSpawner : MonoBehaviour
         {
             SpawnR();
             //intervals between pickup spawns
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(20f);
         }
     }
 
