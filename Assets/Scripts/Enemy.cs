@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
         myAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag(targetTag).transform;
         curHealth = maxHealth;
-        resourceChance = Random.Range(1, 11);
+        resourceChance = Random.Range(1, 8);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
             {
             Instantiate(resourceDrop, transform.position, Quaternion.identity);
             }
-            resourceChance = Random.Range(1, 11);
+            resourceChance = Random.Range(1, 8);
             Destroy(gameObject);
         }
     }

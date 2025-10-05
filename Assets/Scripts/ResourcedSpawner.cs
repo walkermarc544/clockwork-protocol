@@ -23,7 +23,7 @@ public class ResourcedSpawner : MonoBehaviour
         {
             SpawnR();
             //intervals between pickup spawns
-            yield return new WaitForSeconds(20f);
+            yield return new WaitForSeconds(12f);
         }
     }
 

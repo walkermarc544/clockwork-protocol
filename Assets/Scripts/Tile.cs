@@ -37,13 +37,13 @@ void OnMouseDown ()
         return;
     }
 
-    if (resource.GetComponent<ResourceManager>().Count <= 0)
+    if (resource.GetComponent<ResourceManager>().Count <= 1)
         {
             Debug.Log("Not enough resources!");
             return;
          }
 
-ResourceManager.Instance.AddResource(-1);
+ResourceManager.Instance.AddResource(-2);
     turretButtons.SetActive(true);
  //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
  //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
