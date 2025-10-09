@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         if(follow && target != null)
         {
             myAgent.SetDestination(target.position);
+            myAgent.updateRotation = false;
         }
         if(curHealth <= 0)
         {
