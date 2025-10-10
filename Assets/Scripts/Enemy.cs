@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
+    public SpriteRenderer enemySprite;
     public string targetTag;
     private NavMeshAgent myAgent;
     public bool follow;
@@ -28,6 +29,15 @@ public class Enemy : MonoBehaviour
         {
             myAgent.SetDestination(target.position);
             myAgent.updateRotation = false;
+            if(myAgent.velocity.x < 0)
+            {
+                Debug.Log("LEFT");
+                    enemySprite.flipX = true;
+            }
+            else if (myAgent.velocity.x > 0)
+            {
+                enemySprite.flipX = false;
+            }
         }
         if(curHealth <= 0)
         {
