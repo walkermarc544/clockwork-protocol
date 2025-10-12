@@ -27,6 +27,15 @@ public class Enemy : MonoBehaviour
     {
         if(follow && target != null)
         {
+            if(curHealth <= 0)
+        {
+            if (resourceChance == 1)
+            {
+            Instantiate(resourceDrop, transform.position, Quaternion.identity);
+            }
+            resourceChance = Random.Range(1, 8);
+            Destroy(gameObject);
+        }
             myAgent.SetDestination(target.position);
             myAgent.updateRotation = false;
             if(myAgent.velocity.x < 0)
@@ -38,15 +47,6 @@ public class Enemy : MonoBehaviour
             {
                 enemySprite.flipX = false;
             }
-        }
-        if(curHealth <= 0)
-        {
-            if (resourceChance == 1)
-            {
-            Instantiate(resourceDrop, transform.position, Quaternion.identity);
-            }
-            resourceChance = Random.Range(1, 8);
-            Destroy(gameObject);
         }
     }
     void OnTriggerEnter(Collider other)

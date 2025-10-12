@@ -781,6 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  enemySprite: {fileID: 0}
   targetTag: Finish
   follow: 1
   maxHealth: 100
