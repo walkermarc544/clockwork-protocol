@@ -9,6 +9,7 @@ TagManager:
   - Tile
   - ResourceManager
   - HealBullet
+  - Turret
   layers:
   - Default
   - TransparentFX

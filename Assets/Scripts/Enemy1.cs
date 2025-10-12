@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy1 : MonoBehaviour
 {
     public Transform target;
     public SpriteRenderer enemySprite;
@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public int curHealth = 100;
     public GameObject resourceDrop;
     int resourceChance;
+    public GameObject destroyTurret;
+    public GameObject boostResource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +22,8 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag(targetTag).transform;
         curHealth = maxHealth;
         resourceChance = Random.Range(1, 8);
+        destroyTurret = GameObject.FindGameObjectWithTag("Turret");
+        boostResource = GameObject.FindGameObjectWithTag("ResourceManager");
     }
 
     // Update is called once per frame
@@ -32,6 +36,8 @@ public class Enemy : MonoBehaviour
             Instantiate(resourceDrop, transform.position, Quaternion.identity);
             }
             resourceChance = Random.Range(1, 8);
+            Destroy(destroyTurret.gameObject);
+            ResourceManager.Instance.AddResource(1);
             Destroy(gameObject);
         }
         if(follow && target != null)
