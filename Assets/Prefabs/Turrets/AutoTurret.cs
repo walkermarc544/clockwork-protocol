@@ -34,7 +34,6 @@ public class AutoTurret : MonoBehaviour
     private RaycastHit hit;
     private bool isShooting;
     private float cooldown;
-    private GameObject playerObj;
     public int findClosest(GameObject[] input)//Find Closest Object Within Array
     {
         int closest = 0;
@@ -105,8 +104,8 @@ public class AutoTurret : MonoBehaviour
             shell = Instantiate(shellPrefab, shellSpawn.position, shellSpawn.rotation);
             shell.linearVelocity = shellSpawn.TransformDirection(shellRot * shellVelocityMult);
         }
-        if (playerObj && bullet.GetComponent<BulletId>())
-            bullet.GetComponent<BulletId>().sender = playerObj;
+        if (bullet.GetComponent<BulletId>())
+            bullet.GetComponent<BulletId>().sender = this.gameObject;
         bullet.linearVelocity = bulletSpawn.TransformDirection(Vector3.forward * velocityMult);
         if (shootSound != null)
         {
