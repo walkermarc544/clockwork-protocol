@@ -34,7 +34,6 @@ public class AutoTurret : MonoBehaviour
     private RaycastHit hit;
     private bool isShooting;
     private float cooldown;
-    private GameObject playerObj;
     public int findClosest(GameObject[] input)//Find Closest Object Within Array
     {
         int closest = 0;
@@ -66,15 +65,11 @@ public class AutoTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* Vector3 forward = transform.forward;
-        forward.y = 0f;
-        forward.Normalize();
-        Vector3 farPoint = transform.position + forward * 100f;
-        Vector3 dirToTarget = farPoint - bulletSpawn.position;
-        Quaternion newRot = Quaternion.LookRotation(dirToTarget);*/
-        //transform.rotation = Quaternion.Slerp(transform.rotation, newRot, Time.deltaTime * gunDampening);
+        
         objsInRange = GameObject.FindGameObjectsWithTag(targetTag);//Get All Players
-        target = objsInRange[findClosest(objsInRange)];
+        if (objsInRange.Length > 0)
+        {
+            target = objsInRange[findClosest(objsInRange)];
         if (Vector3.Distance(transform.position, target.transform.position) <= maxRange)//Check if Object is Within Range
         {
             Vector3 targetPos = new Vector3(target.transform.position.x + targetOffset.x, target.transform.position.y + targetOffset.y, target.transform.position.z + targetOffset.z);
@@ -93,6 +88,7 @@ public class AutoTurret : MonoBehaviour
             StartCoroutine("shoot");
             onTarget = true;
         }
+        }
     }
     IEnumerator shoot()
     {
@@ -108,8 +104,8 @@ public class AutoTurret : MonoBehaviour
             shell = Instantiate(shellPrefab, shellSpawn.position, shellSpawn.rotation);
             shell.linearVelocity = shellSpawn.TransformDirection(shellRot * shellVelocityMult);
         }
-        if (playerObj && bullet.GetComponent<BulletId>())
-            bullet.GetComponent<BulletId>().sender = playerObj;
+        if (bullet.GetComponent<BulletId>())
+            bullet.GetComponent<BulletId>().sender = this.gameObject;
         bullet.linearVelocity = bulletSpawn.TransformDirection(Vector3.forward * velocityMult);
         if (shootSound != null)
         {

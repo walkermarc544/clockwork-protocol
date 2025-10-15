@@ -4,6 +4,7 @@ public class BuildManager : MonoBehaviour
 {
 
 public static BuildManager instance;
+    public Transform spawn;
 
 void Awake ()
 {
@@ -14,17 +15,18 @@ void Awake ()
     }
     instance = this;
 }
-
+    public GameObject[] turretPrefabs;
+    /*
 public GameObject standardTurretPrefab;
 public GameObject strongTurretPrefab;
-public GameObject healTurretPrefab;
+public GameObject healTurretPrefab;*/
 
 void Start()
-{
+{/*
     turretToBuild1 = standardTurretPrefab;
     turretToBuild2 = strongTurretPrefab;
     turretToBuild3 = healTurretPrefab;
-    
+    */
 }
 
     private GameObject turretToBuild1;

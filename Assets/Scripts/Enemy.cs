@@ -38,15 +38,18 @@ public class Enemy : MonoBehaviour
         {
             myAgent.SetDestination(target.position);
             myAgent.updateRotation = false;
-            if(myAgent.velocity.x < 0)
+            if(enemySprite != null)
             {
-                Debug.Log("LEFT");
+                if (myAgent.velocity.x < 0)
+                {
+                    Debug.Log("LEFT");
                     enemySprite.flipX = true;
-            }
-            else if (myAgent.velocity.x > 0)
-            {
-                enemySprite.flipX = false;
-            }
+                }
+                else if (myAgent.velocity.x > 0)
+                {
+                    enemySprite.flipX = false;
+                }
+            }  
         }
     }
     void OnTriggerEnter(Collider other)
