@@ -1,15 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public GameObject enemy2Prefab;
+    public GameObject[] enemyPrefabs;
+    public TMP_Text currentRoundUI;
+    /*public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
-    public GameObject enemy4Prefab;
-    public Transform spawnPos1;
-    public Transform spawnPos2;
-    public Transform spawnPos3;
+    public GameObject enemy4Prefab;*/ // <- Better to use Arrays in this instance in order to do more with less lines of code
+    public Transform[] spawns;
     public float spawnDelay = 5.0f;
     public float spawnVariance = 1.5f;
     float timePassed = 0.0f;
@@ -19,18 +19,19 @@ public class WaveSpawner : MonoBehaviour
     private int spawnCount;
     private int spawnMax = 15;
     private bool isSpawning = false;
-    int spawnPosition;
+    private bool[] toggleEnemy;
+    int spawnPos;
     int randomEnemyType;
     int destinyBondChance;
-    int wavePhase;
+    public int[] spawnMult = { 1 };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-     spawnPosition = Random.Range(1, 4);
+     spawnPos = Random.Range(1, 4);
      randomEnemyType = Random.Range(1, 4);
      destinyBondChance = Random.Range(1, 4);
-     wavePhase = 1;
+     currentRoundUI.text = "Round: 1";
     }
 
     // Update is called once per frame
@@ -44,17 +45,20 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine("Spawn");
         }
 
-        if (!isSpawning && spawnCount == spawnMax)
+        if (!isSpawning && spawnCount >= spawnMax)
         {
 
             if (timePassed > waveTime)
             {
-                new WaitForSeconds(4);
+                // new WaitForSeconds(4); <- This doesn't call anything, because that function only works within a coroutine function because it's a yield function, which can only be called within a coroutine function. <3 - Marc
+                
                 spawnCount = 0;
                 timePassed = 0.0f;
                 spawnMax += 5;
                 waveTime += 2.0f;
-                wavePhase += 1;
+                spawnMult[curRound] += 1;
+                currentRoundUI.text = "Round: " + curRound;
+                Debug.Log("Wave Phase: " + curRound);
             }
         }
   
@@ -62,131 +66,63 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         isSpawning = true;
-
-        if (spawnPosition == 1) {
-            new WaitForSeconds(3);
-             if (randomEnemyType == 1) {
- Instantiate(enemyPrefab, spawnPos1);
+        spawnPos = Random.Range(0, spawns.Length);
+        randomEnemyType = Random.Range(0, spawns.Length);
+            yield return new WaitForSeconds(spawnDelay);
+            if (randomEnemyType < 4) {
+                Instantiate(enemyPrefabs[randomEnemyType], spawns[spawnPos]);
              }
-             if (randomEnemyType == 2) {
- Instantiate(enemy2Prefab, spawnPos1);
+             else if (randomEnemyType == 4) {
+                    Instantiate(enemyPrefabs[4], spawns[spawnPos]);//Spawn Destiny Bond
              }
-             if (randomEnemyType == 3) {
- Instantiate(enemy3Prefab, spawnPos1);
-             }
-             if (randomEnemyType == 4) {
-                if (destinyBondChance == 1) {
-                 Instantiate(enemyPrefab, spawnPos1);
-                }
-                if (destinyBondChance == 2) {
-                 Instantiate(enemyPrefab, spawnPos1);
-                }
-                if (destinyBondChance == 3) {
-                 Instantiate(enemy4Prefab, spawnPos1);
-                }
-             }
-            spawnPosition = Random.Range(1, 4);
-            randomEnemyType = Random.Range(1, 5);
-            Debug.Log("Spawned at Pos 1");
-        }
-        else if (spawnPosition == 2) {
-            new WaitForSeconds(3);
-            if (randomEnemyType == 1) {
- Instantiate(enemyPrefab, spawnPos2);
-             }
-             if (randomEnemyType == 2) {
- Instantiate(enemy2Prefab, spawnPos2);
-             }
-             if (randomEnemyType == 3) {
- Instantiate(enemy3Prefab, spawnPos2);
-             }
-             if (randomEnemyType == 4) {
-if (destinyBondChance == 1) {
-                 Instantiate(enemyPrefab, spawnPos2);
-                }
-                if (destinyBondChance == 2) {
-                 Instantiate(enemy4Prefab, spawnPos2);
-                }
-                if (destinyBondChance == 3) {
-                 Instantiate(enemy4Prefab, spawnPos2);
-                }
-             }
-            spawnPosition = Random.Range(1, 4);
-        randomEnemyType = Random.Range(1, 5);
-            Debug.Log("Spawned at Pos 2");
-        }
-        else if (spawnPosition == 3) {
-            new WaitForSeconds(3);
-            if (randomEnemyType == 1) {
- Instantiate(enemyPrefab, spawnPos3);
-             }
-             if (randomEnemyType == 2) {
- Instantiate(enemy2Prefab, spawnPos3);
-             }
-             if (randomEnemyType == 3) {
- Instantiate(enemy3Prefab, spawnPos3);
-             }
-             if (randomEnemyType == 4) {
-if (destinyBondChance == 1) {
-                 Instantiate(enemyPrefab, spawnPos3);
-                }
-                if (destinyBondChance == 2) {
-                 Instantiate(enemyPrefab, spawnPos3);
-                }
-                if (destinyBondChance == 3) {
-                 Instantiate(enemy4Prefab, spawnPos3);
-                }
-             }
-            spawnPosition = Random.Range(1, 4);
-            randomEnemyType = Random.Range(1, 5);
-            Debug.Log("Spawned at Pos 3");
-        };
         spawnCount++;
-        if (wavePhase == 1) {
+        /*
+        if (spawnMult== 1) {
             yield return new WaitForSeconds(Random.Range(1, 4));
         }
-        if (wavePhase == 2) {
+        if (spawnMult== 2) {
             yield return new WaitForSeconds(Random.Range(1, 4));
         }
-        if (wavePhase == 3) {
+        if (spawnMult== 3) {
             yield return new WaitForSeconds(Random.Range(1, 3));
         }
-        if (wavePhase == 4) {
+        if (spawnMult== 4) {
             yield return new WaitForSeconds(Random.Range(1, 3));
         }
-        if (wavePhase == 5) {
+        if (spawnMult== 5) {
             yield return new WaitForSeconds(1);
         }
-        if (wavePhase == 6) {
+        if (spawnMult== 6) {
             yield return new WaitForSeconds(1);
         }
-        if (wavePhase == 7) {
+        if (spawnMult== 7) {
             yield return new WaitForSeconds(0.7f);
         }
-        if (wavePhase == 8) {
+        if (spawnMult== 8) {
             yield return new WaitForSeconds(0.7f);
         }
-        if (wavePhase == 9) {
+        if (spawnMult== 9) {
             yield return new WaitForSeconds(0.5f);
         }
-        if (wavePhase == 10) {
+        if (spawnMult== 10) {
             yield return new WaitForSeconds(0.5f);
         }
-        if (wavePhase == 11) {
+        if (spawnMult== 11) {
             yield return new WaitForSeconds(0.3f);
         }
-        if (wavePhase == 12) {
+        if (spawnMult== 12) {
             yield return new WaitForSeconds(0.3f);
         }
-        if (wavePhase == 13) {
+        if (spawnMult== 13) {
             yield return new WaitForSeconds(0.2f);
         }
-        if (wavePhase == 14) {
+        if (spawnMult== 14) {
             yield return new WaitForSeconds(0.2f);
         }
-        if (wavePhase >= 15) {
+        if (spawnMult>= 15) {
             yield return new WaitForSeconds(0.1f);
-        }
+        }*/
+        // ^^^ USE THE spawnMult ARRAY IN THE INSPECTOR TO CHANGE SPECIFIC ROUND SPAWN TIMES
         isSpawning = false;
     }
 }
