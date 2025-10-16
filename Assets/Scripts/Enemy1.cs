@@ -15,6 +15,7 @@ public class Enemy1 : MonoBehaviour
     int resourceChance;
     public GameObject destroyTurret;
     public GameObject boostResource;
+    private bool canDrop = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,13 +32,13 @@ public class Enemy1 : MonoBehaviour
     {
         if(curHealth <= 0)
         {
-            if (resourceChance == 1)
+            if (resourceChance == 1 && canDrop)
             {
-            Instantiate(resourceDrop, transform.position, Quaternion.identity);
+                Instantiate(resourceDrop, transform.position, Quaternion.identity);
+                Destroy(destroyTurret.gameObject);
+                ResourceManager.Instance.AddResource(1);
+                canDrop = false;
             }
-            resourceChance = Random.Range(1, 8);
-            Destroy(destroyTurret.gameObject);
-            ResourceManager.Instance.AddResource(1);
             Destroy(gameObject);
         }
         if(follow && target != null)

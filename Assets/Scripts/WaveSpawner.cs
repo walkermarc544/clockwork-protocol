@@ -5,7 +5,7 @@ using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public int[] enemywaveToggle;
+    public int[] enemyWaveToggle;
     public TMP_Text currentwaveUI;
     /*public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
@@ -65,9 +65,10 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         isSpawning = true;
-        spawnPos = Random.Range(0, spawns.Length);
-        randomEnemyType = Random.Range(0, spawns.Length);
-        if (enemywaveToggle[randomEnemyType] <= curWave)
+        spawnPos = Random.Range(0, spawns.Length - 1);
+        randomEnemyType = Random.Range(0, enemyPrefabs.Length);
+        Debug.Log(randomEnemyType);
+        if (enemyWaveToggle[randomEnemyType] <= curWave)
         {
             yield return new WaitForSeconds(Random.Range(spawnDelay - spawnVariance, spawnDelay + spawnVariance));
             Instantiate(enemyPrefabs[randomEnemyType], spawns[spawnPos]);//Spawn Random Enemy
