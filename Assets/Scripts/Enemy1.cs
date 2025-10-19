@@ -15,6 +15,10 @@ public class Enemy1 : MonoBehaviour
     int resourceChance;
     public GameObject destroyTurret;
     public GameObject boostResource;
+    public AudioSource enemyDBSounds;
+    public AudioClip enemyDBHitSound;
+    public AudioSource turretDestroySounds;
+    public AudioClip turretDestroySound;
     private bool canDrop = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,10 +39,14 @@ public class Enemy1 : MonoBehaviour
             if (resourceChance == 1 && canDrop)
             {
                 Instantiate(resourceDrop, transform.position, Quaternion.identity);
-                Destroy(destroyTurret.gameObject);
-                ResourceManager.Instance.AddResource(1);
+                if (turretDestroySound != null)
+        {
+            turretDestroySounds.PlayOneShot(turretDestroySound);
+        }
                 canDrop = false;
             }
+            Destroy(destroyTurret.gameObject);
+            ResourceManager.Instance.AddResource(1);
             Destroy(gameObject);
         }
         if(follow && target != null)
@@ -60,6 +68,10 @@ public class Enemy1 : MonoBehaviour
     {
         if(other.CompareTag("Bullet"))
         {
+              if (enemyDBHitSound != null)
+        {
+            enemyDBSounds.PlayOneShot(enemyDBHitSound);
+        }
             curHealth -= other.GetComponent<BulletId>().dmg;
             Destroy(other.gameObject);
         }

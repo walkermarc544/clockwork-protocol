@@ -65,7 +65,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator Spawn()
     {
         isSpawning = true;
-        spawnPos = Random.Range(0, spawns.Length - 1);
+        spawnPos = Random.Range(0, spawns.Length);
         randomEnemyType = Random.Range(0, enemyPrefabs.Length);
         Debug.Log(randomEnemyType);
         if (enemyWaveToggle[randomEnemyType] <= curWave)

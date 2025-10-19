@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public int curHealth = 100;
     public GameObject resourceDrop;
     int resourceChance;
+    public AudioSource enemySounds;
+    public AudioClip enemyHitSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +58,10 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("Bullet"))
         {
+             if (enemyHitSound != null)
+        {
+            enemySounds.PlayOneShot(enemyHitSound);
+        }
             curHealth -= other.GetComponent<BulletId>().dmg;
             Destroy(other.gameObject);
         }
