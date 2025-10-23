@@ -5,6 +5,8 @@ public class BuildManager : MonoBehaviour
 
 public static BuildManager instance;
     public Transform spawn;
+    public GameObject TurretUI;
+    public GameObject ObstacleUI;
 
 void Awake ()
 {
@@ -16,6 +18,7 @@ void Awake ()
     instance = this;
 }
     public GameObject[] turretPrefabs;
+    public GameObject[] obstaclePrefabs;
     /*
 public GameObject standardTurretPrefab;
 public GameObject strongTurretPrefab;
@@ -28,21 +31,4 @@ void Start()
     turretToBuild3 = healTurretPrefab;
     */
 }
-
-    private GameObject turretToBuild1;
-    private GameObject turretToBuild2;
-    private GameObject turretToBuild3;
-
-    public GameObject GetTurretToBuild1 ()
-    {
-        return turretToBuild1;
-    }
-    public GameObject GetTurretToBuild2 ()
-    {
-        return turretToBuild2;
-    }
-    public GameObject GetTurretToBuild3 ()
-    {
-        return turretToBuild3;
-    }
 }
