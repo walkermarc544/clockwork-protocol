@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Bullet
+  - Tile
+  - ResourceManager
+  - HealBullet
+  - Turret
   layers:
   - Default
   - TransparentFX
@@ -12,9 +17,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - AI
+  - ResourceManager
+  - Finish
   - 
   - 
   - 
