@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4882177043686943783}
   - component: {fileID: 7807468983703013533}
   - component: {fileID: 876586157293002753}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8355565444358140311}
   - component: {fileID: 8834802505053966253}
   - component: {fileID: 1886295813712822423}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Post
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3994408044249056997}
   - component: {fileID: 2980916678325274290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 3756562836221976030}
   - component: {fileID: 3611842541020414883}
   - component: {fileID: 2440769699862805972}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 1406030590898290587}
   - component: {fileID: 4982665599990642396}
   - component: {fileID: 2678182803266527352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,8 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5634870459263077698}
   - component: {fileID: 347148845489984023}
-  - component: {fileID: 2253795172996780131}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: StrongTurret
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -701,21 +700,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0.16, z: 0}
---- !u!114 &2253795172996780131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694447793481306663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9252be7891d3641819a4d4775d762b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurretDestroy
-  resource: {fileID: 0}
-  turretDestroySounds: {fileID: 2980916678325274290}
-  turretDestroySound: {fileID: 8300000, guid: 0c94274bdd6ba4f14a6c1ae02279d1c2, type: 3}
 --- !u!1 &5414848739479585427
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +712,7 @@ GameObject:
   - component: {fileID: 8590839494406466799}
   - component: {fileID: 7050315282089738225}
   - component: {fileID: 4674857567017580}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -517,8 +517,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947959021}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -4144,26 +4144,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Tile
   buildManager: {fileID: 0}
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
-  positionOffset: {x: 0, y: 0, z: 0}
+  buildPrefab: {fileID: 0}
   resource: {fileID: 0}
+  buildButtons: {fileID: 0}
   buildType: 0
-  canBuild: 1
+  tileTaken: 0
 --- !u!4 &515962011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 157492838275032019, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
   m_PrefabInstance: {fileID: 1848753813}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &515962013 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
-  m_PrefabInstance: {fileID: 1848753813}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54e516fc541e54aee818b70e29918b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &516506726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5110,8 +5100,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947959021}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: BuildObstacle
         m_Mode: 3
         m_Arguments:
@@ -7376,17 +7366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &947959021 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
-  m_PrefabInstance: {fileID: 120191865}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54e516fc541e54aee818b70e29918b0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &950511074
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,8 +8318,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 515962013}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -10406,6 +10385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296505292}
   - component: {fileID: 1296505291}
+  - component: {fileID: 1296505293}
   m_Layer: 0
   m_Name: BuildManager
   m_TagString: Untagged
@@ -10425,15 +10405,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06b301d0c20c49bcaa7f8a7bd9afbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 0}
-  TurretUI: {fileID: 2776712835085767285}
-  ObstacleUI: {fileID: 1134014257}
   turretPrefabs:
   - {fileID: 4694447793481306663, guid: 4cb00bbd9f1c0ce48ab8ba15ccd10800, type: 3}
   - {fileID: 4694447793481306663, guid: 26697fb0a9b45493ab1b01e8d8ac3973, type: 3}
   - {fileID: 4694447793481306663, guid: 15c0a06513b72449dbba650637b830a1, type: 3}
   obstaclePrefabs:
   - {fileID: 9172162070484708337, guid: 7c731c58af6be164f88abd113f96b28f, type: 3}
+  spawnTile: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
+  TurretUI: {fileID: 2776712835085767285}
+  ObstacleUI: {fileID: 1134014257}
+  turretSounds: {fileID: 1296505293}
+  turretDestroySound: {fileID: 8300000, guid: 0c94274bdd6ba4f14a6c1ae02279d1c2, type: 3}
+  canBuild: 0
 --- !u!4 &1296505292
 Transform:
   m_ObjectHideFlags: 0
@@ -10449,6 +10433,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1296505293
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296505290}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1328792695
 GameObject:
   m_ObjectHideFlags: 0
@@ -17510,8 +17591,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947959021}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 3
         m_Arguments:
@@ -17889,8 +17970,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947959021}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 3
         m_Arguments:
@@ -18173,8 +18254,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 947959021}
-        m_TargetAssemblyTypeName: Tile, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: BuildTurret
         m_Mode: 3
         m_Arguments:

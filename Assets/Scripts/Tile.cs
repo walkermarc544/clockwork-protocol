@@ -6,27 +6,30 @@ public class Tile : MonoBehaviour
 {
     public BuildManager buildManager;
     public Color hoverColor;
-    public Vector3 positionOffset;
-private GameObject buildPrefab;
 
-private Renderer rend;
-private Color startColor;
-public GameObject resource;
+    public GameObject buildPrefab;
 
-private GameObject buildButtons;
+    private Renderer rend;
+    private Color startColor;
+    public GameObject resource;
+
+    public GameObject buildButtons;
     private bool toggleUI;
     public build buildType;
-    public bool canBuild = true;
+    public bool tileTaken = false;
+
+
     private GameObject[] tiles;
 
 
-void Start()
-{
+
+    void Start()
+    {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
-    resource = GameObject.FindGameObjectWithTag("ResourceManager");
-    rend = GetComponent<Renderer>();
-    startColor = rend.material.color;
-        if(buildType == build.Turret)
+        resource = GameObject.FindGameObjectWithTag("ResourceManager");
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
+        if (buildType == build.Turret)
         {
             buildButtons = buildManager.TurretUI;
         }
@@ -39,76 +42,49 @@ void Start()
             buildButtons.SetActive(false);
         }
 
-}
-
-void OnMouseDown ()
-{
-    if (buildPrefab != null)
-    {
-        Debug.Log("Can't build there!");
-        return;
     }
 
-    if (resource.GetComponent<ResourceManager>().Count <= 1)
+    void OnMouseDown()
+    {
+        if (buildManager.canBuild)
         {
-            Debug.Log("Not enough resources!");
-            return;
-         }
-    else if(canBuild)
-        {
-            buildManager.spawn = this.transform;
-            buildButtons.SetActive(true);
-            foreach (GameObject tile in tiles)
+            if (buildPrefab == null && resource.GetComponent<ResourceManager>().Count > 1)//Build Prefab
             {
-                tile.GetComponent<Tile>().canBuild = false;
+                buildManager.spawnTile = this.GetComponent<Tile>();
+                buildButtons.SetActive(true);
+                buildManager.canBuild = false;
             }
+            else if (buildPrefab != null)//Destroy Prefab
+            {
+                if (buildManager.destroySound != null)
+                {
+                    buildManager.buildSounds.PlayOneShot(buildManager.destroySound);
+                }
+                ResourceManager.Instance.AddResource(1);
+                Debug.Log("Turret down!");
+                Destroy(buildPrefab);
+            }
+
+
+
         }
 
- //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
- //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
-}
-
-public void BuildTurret(int turretIndex)
-    {
-        Debug.Log(buildManager.turretPrefabs);
-        GameObject[] turrets = buildManager.turretPrefabs;
-        ResourceManager.Instance.AddResource(-2);
-        buildPrefab = (GameObject)Instantiate(turrets[turretIndex], buildManager.spawn.position + positionOffset, buildManager.spawn.rotation);
-        buildButtons.SetActive(false);
-        foreach (GameObject tile in tiles)
-        {
-            tile.GetComponent<Tile>().canBuild = true;
-        }
-    }
-    public void BuildObstacle(int obstacleIndex)
-    {
-        Debug.Log(buildManager.turretPrefabs);
-        GameObject[] obstacles = buildManager.obstaclePrefabs;
-        ResourceManager.Instance.AddResource(-2);
-        buildPrefab = (GameObject)Instantiate(obstacles[obstacleIndex], buildManager.spawn.position + positionOffset, buildManager.spawn.rotation);
-        buildButtons.SetActive(false);
-        foreach (GameObject tile in tiles)
-        {
-            tile.GetComponent<Tile>().canBuild = true;
-        }
-    }
-    public void Back()
-    {
-        buildButtons.SetActive(false);
+        //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnMouseEnter ()
+    void OnMouseEnter()
     {
 
-       rend.material.color = hoverColor;
-  
+        rend.material.color = hoverColor;
+
     }
 
- void OnMouseExit ()
+    void OnMouseExit()
     {
 
-       rend.material.color = startColor;
-  
+        rend.material.color = startColor;
+
     }
 
 }

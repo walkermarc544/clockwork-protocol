@@ -699,6 +699,7 @@ GameObject:
   - component: {fileID: 3673328645281859666}
   - component: {fileID: 1487627963672799866}
   - component: {fileID: 3205110302390715219}
+  - component: {fileID: 4034127784047478952}
   m_Layer: 6
   m_Name: TestEnemy
   m_TagString: Enemy
@@ -787,9 +788,38 @@ MonoBehaviour:
   follow: 1
   maxHealth: 100
   curHealth: 100
+  dmg: 25
+  dmgDelay: 2
   resourceDrop: {fileID: 2313978395767544315, guid: f578a3c4300f60643a5a36108a995e20, type: 3}
   enemySounds: {fileID: 352733286009898983}
   enemyHitSound: {fileID: 8300000, guid: 4d686c444afbb48cfa94a01a0f6937a4, type: 3}
+--- !u!54 &4034127784047478952
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822413235817193916}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &1843684944769990692
 GameObject:
   m_ObjectHideFlags: 0
