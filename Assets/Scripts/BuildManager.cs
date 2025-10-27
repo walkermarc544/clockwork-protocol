@@ -14,6 +14,13 @@ public class BuildManager : MonoBehaviour
     public AudioClip destroySound;
     public bool canBuild = true;
 
+    public GameObject resource;
+
+    void Start()
+    {
+        resource = GameObject.FindGameObjectWithTag("ResourceManager");
+    }
+
     void Awake()
     {
         if (instance != null)
@@ -27,7 +34,30 @@ public class BuildManager : MonoBehaviour
     public void BuildTurret(int turretIndex)
     {
         GameObject[] turrets = turretPrefabs;
+        if (turretIndex == 0)
+        {
+            if (resource.GetComponent<ResourceManager>().Count < 2)
+        {
+            return;
+        }
         ResourceManager.Instance.AddResource(-2);
+        }
+        if (turretIndex == 1)
+        {
+            if (resource.GetComponent<ResourceManager>().Count < 4)
+        {
+            return;
+        }
+        ResourceManager.Instance.AddResource(-4);
+        }
+        if (turretIndex == 2)
+        {
+            if (resource.GetComponent<ResourceManager>().Count < 6)
+        {
+            return;
+        }
+        ResourceManager.Instance.AddResource(-6);
+        }
         spawnTile.buildPrefab = Instantiate(turrets[turretIndex], spawnTile.transform.position + positionOffset, spawnTile.transform.rotation);
         Back();
     }
