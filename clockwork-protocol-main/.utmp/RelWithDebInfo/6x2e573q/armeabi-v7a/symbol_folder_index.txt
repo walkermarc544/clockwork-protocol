@@ -1,0 +1,1 @@
+C:\A! Unity\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\6x2e573q\obj\armeabi-v7a

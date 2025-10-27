@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c06b301d0c20c49bcaa7f8a7bd9afbff
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spawnTile: {instanceID: 0}
+  - TurretUI: {instanceID: 0}
+  - ObstacleUI: {instanceID: 0}
+  - buildSounds: {instanceID: 0}
+  - destroySound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
