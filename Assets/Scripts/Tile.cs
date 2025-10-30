@@ -1,88 +1,90 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+public enum build { Turret, Obstacle }
 public class Tile : MonoBehaviour
 {
+    public BuildManager buildManager;
+    public Color hoverColor;
 
-public Color hoverColor;
-public Vector3 positionOffset;
+    public GameObject buildPrefab;
 
-private GameObject turret;
+    private Renderer rend;
+    private Color startColor;
+    public GameObject resource;
 
-private Renderer rend;
-private Color startColor;
-public GameObject resource;
+    public GameObject buildButtons;
+    private bool toggleUI;
+    public build buildType;
+    public bool tileTaken = false;
 
-public GameObject turretButtons;
 
-void Start()
-{
-    resource = GameObject.FindGameObjectWithTag("ResourceManager");
-    rend = GetComponent<Renderer>();
-    startColor = rend.material.color;
+    private GameObject[] tiles;
 
-    if (turretButtons != null)
+
+
+    void Start()
+    {
+        tiles = GameObject.FindGameObjectsWithTag("Tile");
+        resource = GameObject.FindGameObjectWithTag("ResourceManager");
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
+        if (buildType == build.Turret)
         {
-            turretButtons.SetActive(false);
+            buildButtons = buildManager.TurretUI;
+        }
+        else if (buildType == build.Obstacle)
+        {
+            buildButtons = buildManager.ObstacleUI;
+        }
+        if (buildButtons != null)
+        {
+            buildButtons.SetActive(false);
         }
 
-}
-
-void OnMouseDown ()
-{
-    if (turret != null)
-    {
-        Debug.Log("Can't build there!");
-        return;
     }
 
-    if (resource.GetComponent<ResourceManager>().Count <= 1)
+    void OnMouseDown()
+    {
+        if (buildManager.canBuild)
         {
-            Debug.Log("Not enough resources!");
-            return;
-         }
+            if (buildPrefab == null && resource.GetComponent<ResourceManager>().Count > 1)//Build Prefab
+            {
+                buildManager.spawnTile = this.GetComponent<Tile>();
+                buildButtons.SetActive(true);
+                buildManager.canBuild = false;
+            }
+            else if (buildPrefab != null)//Destroy Prefab
+            {
+                if (buildManager.destroySound != null)
+                {
+                    buildManager.buildSounds.PlayOneShot(buildManager.destroySound);
+                }
+                ResourceManager.Instance.AddResource(1);
+                Debug.Log("Turret down!");
+                Destroy(buildPrefab);
+            }
 
-ResourceManager.Instance.AddResource(-2);
-    turretButtons.SetActive(true);
- //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
- //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
-}
 
-public void BuildFastTurret()
-    {
-        GameObject turretToBuild1 = BuildManager.instance.GetTurretToBuild1();
-        turret = (GameObject)Instantiate(turretToBuild1, transform.position + positionOffset, transform.rotation);
-    turretButtons.SetActive(false);
+
+        }
+
+        //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
-
-    public void BuildStrongTurret()
-    {
-        GameObject turretToBuild2 = BuildManager.instance.GetTurretToBuild2();
-        turret = (GameObject)Instantiate(turretToBuild2, transform.position + positionOffset, transform.rotation);
-    turretButtons.SetActive(false);
-    }
-
-    public void BuildHealTurret()
-    {
-        GameObject turretToBuild3 = BuildManager.instance.GetTurretToBuild3();
-        turret = (GameObject)Instantiate(turretToBuild3, transform.position + positionOffset, transform.rotation);
-    turretButtons.SetActive(false);
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnMouseEnter ()
+    void OnMouseEnter()
     {
 
-       rend.material.color = hoverColor;
-  
+        rend.material.color = hoverColor;
+
     }
 
- void OnMouseExit ()
+    void OnMouseExit()
     {
 
-       rend.material.color = startColor;
-  
+        rend.material.color = startColor;
+
     }
 
 }

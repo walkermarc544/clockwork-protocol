@@ -6,11 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Bullet
-  - Tile
-  - ResourceManager
-  - HealBullet
-  - Turret
-  - Barricade
   layers:
   - Default
   - TransparentFX
@@ -19,8 +14,8 @@ TagManager:
   - Water
   - UI
   - AI
-  - ResourceManager
-  - Finish
+  - 
+  - 
   - 
   - 
   - 

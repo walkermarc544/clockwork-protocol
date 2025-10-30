@@ -8,7 +8,7 @@ public class LoseCondition : MonoBehaviour
 public GameObject youLose;
 public TextMeshProUGUI healthText;
 public TextMeshProUGUI loseText;
-public int Health = 3;
+public int Health = 5;
 private int HealHits = 0;
 
 void Start()
@@ -34,6 +34,13 @@ void Update()
 public void LoseHealth(int amount)
     {
         Health -= amount;
+        UpdateHUD();
+    }
+
+    public void Restarted()
+    {
+        Health = 5;
+        Time.timeScale = 1.0f; 
         UpdateHUD();
     }
 
