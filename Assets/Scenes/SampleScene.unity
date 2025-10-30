@@ -10779,6 +10779,7 @@ MonoBehaviour:
   buildSounds: {fileID: 0}
   destroySound: {fileID: 0}
   canBuild: 0
+  resource: {fileID: 0}
 --- !u!4 &1296505292
 Transform:
   m_ObjectHideFlags: 0
