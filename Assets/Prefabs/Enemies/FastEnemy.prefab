@@ -916,6 +916,8 @@ MonoBehaviour:
   follow: 1
   maxHealth: 50
   curHealth: 50
+  dmg: 25
+  dmgDelay: 2
   resourceDrop: {fileID: 2313978395767544315, guid: f578a3c4300f60643a5a36108a995e20, type: 3}
   enemySounds: {fileID: 6006230201244612551}
   enemyHitSound: {fileID: 8300000, guid: 4d686c444afbb48cfa94a01a0f6937a4, type: 3}
@@ -2606,8 +2608,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 4656776829211043777}
     m_Modifications:
     - target: {fileID: 2677081585911153421, guid: 6733c8191ce274e409cb688dcd85f846, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 52f847e6c54100d4e9db91ff0c5fbef7, type: 3}
+    - target: {fileID: 2677081585911153421, guid: 6733c8191ce274e409cb688dcd85f846, type: 3}
       propertyPath: m_Color.b
-      value: 0.9696944
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2677081585911153421, guid: 6733c8191ce274e409cb688dcd85f846, type: 3}
       propertyPath: m_Color.g
@@ -2615,7 +2621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2677081585911153421, guid: 6733c8191ce274e409cb688dcd85f846, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8207074829882550776, guid: 6733c8191ce274e409cb688dcd85f846, type: 3}
       propertyPath: m_LocalScale.x
