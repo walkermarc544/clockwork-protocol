@@ -8,7 +8,12 @@ public class TurretDestroy : MonoBehaviour
     public AudioClip turretDestroySound;
 
     public GameObject upgradeButtons;
+    public GameObject upgradingTurrets;
     private bool toggleUI;
+
+    public GameObject spawnTile;
+    public bool isUpgrading;
+    public int boolNumber;
 
     [SerializeField] GameObject autoTurret;
 
@@ -21,20 +26,40 @@ public class TurretDestroy : MonoBehaviour
         {
             upgradeButtons.SetActive(false);
         }
+
+        isUpgrading = false;
+        boolNumber = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (boolNumber == 1) {
+            isUpgrading = true;
+        }
+if (isUpgrading == true) {
+    gameObject.tag = "UpgradingTurret";
+}
+if (isUpgrading == false) {
+    gameObject.tag = "Untagged";
+}
     }
 
     void OnMouseDown()
     {
 
+upgradeButtons.GetComponent<UpgradingTurrets>().spawnTile = this.GetComponent<GameObject>();
+Debug.Log("Tag Changed!");
+
         if (upgradeButtons == null)
         {
+
             upgradeButtons.SetActive(true);
+            Debug.Log("BOOL NUMBER");
+            gameObject.tag = "UpgradingTurret";
+            isUpgrading = true;
+            boolNumber += 1;
         }
 
     }
@@ -45,8 +70,8 @@ if (resource.GetComponent<ResourceManager>().Count < 1)
             return;
         }
         ResourceManager.Instance.AddResource(-1);
-if (autoTurret.GetComponent<AutoTurret>().shootDelay > 0.01f) {
-autoTurret.GetComponent<AutoTurret>().shootDelay -= 0.01f;
+if (spawnTile.GetComponent<AutoTurret>().shootDelay > 0.01f) {
+spawnTile.GetComponent<AutoTurret>().shootDelay -= 0.01f;
     }
 Debug.Log("SPEED UPGRADE!");
 Cancel();
@@ -59,7 +84,7 @@ if (resource.GetComponent<ResourceManager>().Count < 1)
             return;
         }
         ResourceManager.Instance.AddResource(-1);
-autoTurret.GetComponent<AutoTurret>().turretDmg += 3;
+spawnTile.GetComponent<AutoTurret>().turretDmg += 3;
 Debug.Log("DAMAGE UPGRADE!");
 Cancel();
 
