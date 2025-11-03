@@ -18,6 +18,8 @@ public class Tile : MonoBehaviour
     public build buildType;
     public bool tileTaken = false;
 
+    public GameObject upgradeButtons;
+
 
     private GameObject[] tiles;
 
@@ -25,6 +27,7 @@ public class Tile : MonoBehaviour
 
     void Start()
     {
+
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         resource = GameObject.FindGameObjectWithTag("ResourceManager");
         rend = GetComponent<Renderer>();
@@ -42,6 +45,11 @@ public class Tile : MonoBehaviour
             buildButtons.SetActive(false);
         }
 
+         if (upgradeButtons != null)
+        {
+            upgradeButtons.SetActive(false);
+        }
+
     }
 
     void OnMouseDown()
@@ -56,14 +64,9 @@ public class Tile : MonoBehaviour
             }
             else if (buildPrefab != null)//Destroy Prefab
             {
-                if (buildManager.destroySound != null)
-                {
-                    buildManager.buildSounds.PlayOneShot(buildManager.destroySound);
-                }
-                ResourceManager.Instance.AddResource(1);
-                Debug.Log("Turret down!");
-                Destroy(buildPrefab);
-            }
+                Debug.Log("UPGRADES");
+            upgradeButtons.SetActive(true);
+            } 
 
 
 

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class TurretDestroy : MonoBehaviour
+public class HealTurretDestroy : MonoBehaviour
 {
-
     public GameObject resource;
     public AudioSource turretDestroySounds;
     public AudioClip turretDestroySound;
 
     public GameObject upgradeButtons;
+    public GameObject goalHealHits;
     private bool toggleUI;
 
     [SerializeField] GameObject autoTurret;
@@ -17,6 +17,7 @@ public class TurretDestroy : MonoBehaviour
     {
         resource = GameObject.FindGameObjectWithTag("ResourceManager");
         upgradeButtons = GameObject.FindGameObjectWithTag("UpgradeButtons");
+        goalHealHits = GameObject.FindGameObjectWithTag("Finish");
         if (upgradeButtons != null)
         {
             upgradeButtons.SetActive(false);
@@ -45,8 +46,8 @@ if (resource.GetComponent<ResourceManager>().Count < 1)
             return;
         }
         ResourceManager.Instance.AddResource(-1);
-if (autoTurret.GetComponent<AutoTurret>().shootDelay > 0.01f) {
-autoTurret.GetComponent<AutoTurret>().shootDelay -= 0.01f;
+if (autoTurret.GetComponent<AutoTurret1>().shootDelay > 0.01f) {
+autoTurret.GetComponent<AutoTurret1>().shootDelay -= 0.01f;
     }
 Debug.Log("SPEED UPGRADE!");
 Cancel();
@@ -59,7 +60,9 @@ if (resource.GetComponent<ResourceManager>().Count < 1)
             return;
         }
         ResourceManager.Instance.AddResource(-1);
-autoTurret.GetComponent<AutoTurret>().turretDmg += 3;
+if (goalHealHits.GetComponent<LoseCondition>().HealHitMeter > 5) {
+goalHealHits.GetComponent<LoseCondition>().HealHitMeter -= 5;
+}
 Debug.Log("DAMAGE UPGRADE!");
 Cancel();
 
@@ -73,7 +76,6 @@ if (turretDestroySound != null)
         }
         ResourceManager.Instance.AddResource(1);
         Debug.Log("Turret down!");
-        Cancel();
         Destroy(gameObject);
 
     }

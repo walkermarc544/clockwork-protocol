@@ -18,6 +18,7 @@ public class AutoTurret : MonoBehaviour
     public Transform bulletSpawn;
     public float shootDelay = 0.02f;
     public float velocityMult = 100f;
+    public int turretDmg;
     //AUDIO
     public AudioSource gunSounds;
     public AudioClip shootSound;
@@ -98,6 +99,7 @@ public class AutoTurret : MonoBehaviour
         Rigidbody shell;
         Vector3 spawnPos = bulletSpawn.position;
         bullet = Instantiate(bulletPrefab, spawnPos, bulletSpawn.rotation);
+        bullet.GetComponent<BulletId>().dmg = turretDmg;
         if (ejectShells)
         {
             Vector3 shellRot = Vector3.forward + new Vector3(Random.Range(0, 0.5f), Random.Range(0, 0.25f), 0);

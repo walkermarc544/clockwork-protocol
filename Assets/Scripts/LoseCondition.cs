@@ -10,6 +10,7 @@ public TextMeshProUGUI healthText;
 public TextMeshProUGUI loseText;
 public int Health = 5;
 private int HealHits = 0;
+public int HealHitMeter = 30;
 
 void Start()
 {
@@ -67,7 +68,7 @@ void UpdateHUD()
             
         }
 
-if (HealHits == 30)
+if (HealHits == HealHitMeter)
 {
 LoseHealth(-1);
 HealHits = 0;
