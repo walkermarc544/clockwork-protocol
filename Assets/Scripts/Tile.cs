@@ -65,7 +65,7 @@ public class Tile : MonoBehaviour
             else if (buildPrefab != null)//Destroy Prefab
             {
                 Debug.Log("UPGRADES");
-            upgradeButtons.SetActive(true);
+          //  upgradeButtons.SetActive(true);
             } 
 
 

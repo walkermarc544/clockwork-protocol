@@ -19,7 +19,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
-       // Count = 3;
+       Count = 3;
         UpdateHUD();
     }
 
