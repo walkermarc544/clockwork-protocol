@@ -26,7 +26,7 @@ public class Enemy1 : MonoBehaviour
         myAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag(targetTag).transform;
         curHealth = maxHealth;
-        resourceChance = Random.Range(1, 6);
+        resourceChance = Random.Range(1, 5);
         destroyTurret = GameObject.FindGameObjectWithTag("Turret");
         boostResource = GameObject.FindGameObjectWithTag("ResourceManager");
     }

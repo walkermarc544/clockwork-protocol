@@ -6,7 +6,7 @@ public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager Instance;
 
-    public int Count = 3;
+    public int Count;
     public TextMeshProUGUI ResourceText;
 
     private void Awake()
@@ -19,7 +19,7 @@ public class ResourceManager : MonoBehaviour
 
     private void Start()
     {
-        Count = 3;
+       // Count = 3;
         UpdateHUD();
     }
 

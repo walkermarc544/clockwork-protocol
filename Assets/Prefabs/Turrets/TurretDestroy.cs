@@ -27,8 +27,9 @@ public class TurretDestroy : MonoBehaviour
             upgradeButtons.SetActive(false);
         }
 
-        isUpgrading = false;
-        boolNumber = 0;
+        isUpgrading = true;
+        boolNumber = 1;
+        
         
     }
 
