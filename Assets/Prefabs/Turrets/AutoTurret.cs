@@ -13,6 +13,7 @@ public class AutoTurret : MonoBehaviour
     public bool targetAcquired = false;
     public bool onTarget;
     public LayerMask targetLayer;
+    public bool heal;
     //BULLET
     public Rigidbody bulletPrefab;
     public Transform bulletSpawn;
