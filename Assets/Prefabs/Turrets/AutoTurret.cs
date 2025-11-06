@@ -32,6 +32,8 @@ public class AutoTurret : MonoBehaviour
     public Light muzzleFlash;
     public GameObject[] objsInRange;
     //OTHER
+    public int speedLevel = 1;
+    public int rangeLevel = 1;
     private RaycastHit hit;
     private bool isShooting;
     private float cooldown;
@@ -119,7 +121,7 @@ public class AutoTurret : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             muzzleFlash.enabled = false;
         }
-        yield return new WaitForSeconds(shootDelay);
+        yield return new WaitForSeconds(shootDelay / (speedLevel * 2));
         isShooting = false;
     }
 }

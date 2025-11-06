@@ -18,17 +18,12 @@ public class Tile : MonoBehaviour
     public build buildType;
     public bool tileTaken = false;
 
-    public GameObject upgradeButtons;
-
-
-    private GameObject[] tiles;
-
+    private string myTag;
 
 
     void Start()
     {
-
-        tiles = GameObject.FindGameObjectsWithTag("Tile");
+        myTag = gameObject.tag;
         resource = GameObject.FindGameObjectWithTag("ResourceManager");
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
@@ -45,9 +40,9 @@ public class Tile : MonoBehaviour
             buildButtons.SetActive(false);
         }
 
-         if (upgradeButtons != null)
+         if (buildManager.modifyUI != null)
         {
-            upgradeButtons.SetActive(false);
+            buildManager.modifyUI.SetActive(false);
         }
 
     }
@@ -56,38 +51,31 @@ public class Tile : MonoBehaviour
     {
         if (buildManager.canBuild)
         {
+            buildManager.selectedTile = this.GetComponent<Tile>();
             if (buildPrefab == null && resource.GetComponent<ResourceManager>().Count > 1)//Build Prefab
-            {
-                buildManager.spawnTile = this.GetComponent<Tile>();
+            {    
                 buildButtons.SetActive(true);
                 buildManager.canBuild = false;
             }
-            else if (buildPrefab != null)//Destroy Prefab
+            else if (buildPrefab != null)//Open Modify Menu
             {
                 Debug.Log("UPGRADES");
-          //  upgradeButtons.SetActive(true);
-            } 
-
-
-
+                buildManager.modifyUI.SetActive(true);
+                buildManager.canBuild = false;
+            }
         }
-
         //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnMouseEnter()
     {
-
         rend.material.color = hoverColor;
-
     }
 
     void OnMouseExit()
     {
-
         rend.material.color = startColor;
-
     }
 
 }

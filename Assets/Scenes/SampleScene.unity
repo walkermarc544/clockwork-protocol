@@ -807,6 +807,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -2007,6 +2011,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -2744,6 +2752,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -4235,7 +4247,6 @@ MonoBehaviour:
   buildButtons: {fileID: 0}
   buildType: 0
   tileTaken: 0
-  upgradeButtons: {fileID: 0}
 --- !u!4 &515962011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 157492838275032019, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
@@ -4297,6 +4308,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -5790,6 +5805,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -5862,6 +5881,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -6582,6 +6605,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -7158,6 +7185,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -8562,7 +8593,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8900,6 +8931,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -9212,7 +9247,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2000, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -9521,6 +9556,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -9791,6 +9830,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -10809,14 +10852,15 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 9172162070484708337, guid: 7c731c58af6be164f88abd113f96b28f, type: 3}
   - {fileID: 2952987380155983992, guid: b7db7d35915f8f5438ac865ba577bd1b, type: 3}
-  spawnTile: {fileID: 0}
+  selectedTile: {fileID: 0}
   positionOffset: {x: 0, y: 0, z: 0}
   TurretUI: {fileID: 2776712835085767285}
   ObstacleUI: {fileID: 1134014257}
+  modifyUI: {fileID: 6644730409869283667}
   buildSounds: {fileID: 0}
   destroySound: {fileID: 0}
   canBuild: 0
-  resource: {fileID: 0}
+  resourceManager: {fileID: 0}
 --- !u!4 &1296505292
 Transform:
   m_ObjectHideFlags: 0
@@ -11699,6 +11743,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -11837,6 +11885,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -12890,6 +12942,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -13341,6 +13397,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -13836,6 +13896,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -15012,6 +15076,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -15218,6 +15286,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -15466,6 +15538,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -15679,6 +15755,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -15836,6 +15916,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -16962,6 +17046,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -17034,6 +17122,10 @@ PrefabInstance:
       propertyPath: buildManager
       value: 
       objectReference: {fileID: 1296505291}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
@@ -17948,6 +18040,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1296505291}
     - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
+      propertyPath: modifyButtons
+      value: 
+      objectReference: {fileID: 6644730409869283667}
+    - target: {fileID: 2320137155465186358, guid: 1ad501352e043491b83b7007f67a2f7f, type: 3}
       propertyPath: turretButtons
       value: 
       objectReference: {fileID: 2776712835085767285}
@@ -18631,7 +18727,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2000, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -18812,7 +18908,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8392083851298832156}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UpgradingTurrets, Assembly-CSharp
         m_MethodName: UpgradeDmg
         m_Mode: 1
@@ -18951,8 +19047,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8392083851298832156}
-        m_TargetAssemblyTypeName: UpgradingTurrets, Assembly-CSharp
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
         m_MethodName: UpgradeSpeed
         m_Mode: 1
         m_Arguments:
@@ -18975,7 +19071,6 @@ GameObject:
   - component: {fileID: 8547222296430676355}
   - component: {fileID: 4359278545965410251}
   - component: {fileID: 9107064952742731895}
-  - component: {fileID: 9107064952742731896}
   m_Layer: 5
   m_Name: TurretButtons
   m_TagString: Untagged
@@ -19065,9 +19160,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8392083851298832156}
-        m_TargetAssemblyTypeName: UpgradingTurrets, Assembly-CSharp
-        m_MethodName: Cancel
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19348,7 +19443,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 2000, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -19449,9 +19544,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8392083851298832156}
-        m_TargetAssemblyTypeName: UpgradingTurrets, Assembly-CSharp
-        m_MethodName: Scrap
+      - m_Target: {fileID: 1296505291}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+        m_MethodName: DestroyBuild
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19892,10 +19987,9 @@ GameObject:
   - component: {fileID: 4284476725075037256}
   - component: {fileID: 1830055083157134410}
   - component: {fileID: 8392083851298832155}
-  - component: {fileID: 8392083851298832156}
   m_Layer: 5
-  m_Name: UpgradeButtons
-  m_TagString: UpgradeButtons
+  m_Name: ModifyButtons
+  m_TagString: ModifyButtons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20278,20 +20372,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8392083851298832156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6644730409869283667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5b9cbec277046e3a4c79b63c8c6ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradingTurrets
-  spawnTile: {fileID: 0}
-  resource: {fileID: 0}
 --- !u!223 &8547222296430676355
 Canvas:
   m_ObjectHideFlags: 0
@@ -20401,20 +20481,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9107064952742731896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2776712835085767285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c5b9cbec277046e3a4c79b63c8c6ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  spawnTile: {fileID: 0}
-  resource: {fileID: 0}
 --- !u!224 &9116691569459643814
 RectTransform:
   m_ObjectHideFlags: 0
