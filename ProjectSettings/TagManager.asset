@@ -11,8 +11,9 @@ TagManager:
   - HealBullet
   - Turret
   - Barricade
-  - UpgradeButtons
-  - ModifyTurret
+  - Modify
+  - Undefined
+  - ModifyButtons
   layers:
   - Default
   - TransparentFX
