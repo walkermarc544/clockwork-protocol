@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -4067893848085953533}
   - component: {fileID: -3476148834186114216}
   - component: {fileID: 7437147047311679793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TankEnem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
