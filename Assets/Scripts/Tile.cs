@@ -18,16 +18,16 @@ public class Tile : MonoBehaviour
     public build buildType;
     public bool tileTaken = false;
 
-    public GameObject upgradeButtons;
+    public GameObject modifyButtons;
 
 
     private GameObject[] tiles;
-
+    private string myTag;
 
 
     void Start()
     {
-
+        myTag = gameObject.tag;
         tiles = GameObject.FindGameObjectsWithTag("Tile");
         resource = GameObject.FindGameObjectWithTag("ResourceManager");
         rend = GetComponent<Renderer>();
@@ -45,9 +45,9 @@ public class Tile : MonoBehaviour
             buildButtons.SetActive(false);
         }
 
-         if (upgradeButtons != null)
+         if (modifyButtons != null)
         {
-            upgradeButtons.SetActive(false);
+            modifyButtons.SetActive(false);
         }
 
     }
@@ -62,32 +62,25 @@ public class Tile : MonoBehaviour
                 buildButtons.SetActive(true);
                 buildManager.canBuild = false;
             }
-            else if (buildPrefab != null)//Destroy Prefab
+            else if (buildPrefab != null)//Open Modify Menu
             {
                 Debug.Log("UPGRADES");
-          //  upgradeButtons.SetActive(true);
-            } 
-
-
-
+                modifyButtons.SetActive(true);
+                this.gameObject.tag = "ModifyTurret";
+            }
         }
-
         //   GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         //   turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnMouseEnter()
     {
-
         rend.material.color = hoverColor;
-
     }
 
     void OnMouseExit()
     {
-
         rend.material.color = startColor;
-
     }
 
 }

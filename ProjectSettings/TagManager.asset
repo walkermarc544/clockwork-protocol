@@ -12,7 +12,7 @@ TagManager:
   - Turret
   - Barricade
   - UpgradeButtons
-  - UpgradingTurret
+  - ModifyTurret
   layers:
   - Default
   - TransparentFX

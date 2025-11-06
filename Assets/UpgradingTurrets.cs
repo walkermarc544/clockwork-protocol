@@ -3,40 +3,47 @@ using UnityEngine;
 public class UpgradingTurrets : MonoBehaviour
 {
 
-    public GameObject spawnTile;
-       public GameObject resource;
+    public Tile spawnTile;
+    public GameObject resource;
+    private AutoTurret selectedTurret;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-                resource = GameObject.FindGameObjectWithTag("ResourceManager");
-                
+        resource = GameObject.FindGameObjectWithTag("ResourceManager");     
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawnTile = GameObject.FindGameObjectWithTag("UpgradingTurret");
+        if(selectedTurret != null)
+        spawnTile = GameObject.FindGameObjectWithTag("ModifyTurret").GetComponent<Tile>();
+
     }
 
-    public void UpgradeSpeed() {
-if (resource.GetComponent<ResourceManager>().Count < 1)
+    public void UpgradeSpeed() 
+    {
+    if (resource.GetComponent<ResourceManager>().Count < 1)
         {
             return;
         }
         ResourceManager.Instance.AddResource(-1);
-if (spawnTile.GetComponent<AutoTurret>().shootDelay > 0.01f) {
-spawnTile.GetComponent<AutoTurret>().shootDelay -= 0.01f;
-    }
+    if (spawnTile.GetComponent<Tile>())
+        {
+            selectedTurret = spawnTile.buildPrefab.GetComponent<AutoTurret>();
+        }
+        if (selectedTurret.shootDelay >= 0.01f)
+        {
+            selectedTurret.shootDelay = 0.01f;
+        }
 Debug.Log("SPEED UPGRADE!");
 spawnTile.tag = "Turret";
 gameObject.SetActive(false);
 Cancel();
-
     }
 
-    public void UpgradeDmg() {
-if (resource.GetComponent<ResourceManager>().Count < 1)
+    void UpgradeDmg() {
+    if (resource.GetComponent<ResourceManager>().Count < 1)
         {
             return;
         }
@@ -48,7 +55,7 @@ Cancel();
 
     }
 
-    public void Scrap() {
+    void Scrap() {
 
         ResourceManager.Instance.AddResource(1);
         Debug.Log("Turret down!");
@@ -58,9 +65,8 @@ Cancel();
 
     }
 
-    public void Cancel() {
-
-gameObject.SetActive(false);
-
+    void Cancel() 
+    {
+        gameObject.SetActive(false);
     }
 }
