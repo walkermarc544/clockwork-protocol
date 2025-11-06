@@ -988,7 +988,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5634870459263077698}
   - component: {fileID: 347148845489984023}
-  - component: {fileID: 6739214421904261672}
   m_Layer: 2
   m_Name: HealTurret
   m_TagString: Turret
@@ -1037,27 +1036,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0.16, z: 0}
---- !u!114 &6739214421904261672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4694447793481306663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9252be7891d3641819a4d4775d762b6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TurretDestroy
-  resource: {fileID: 0}
-  turretDestroySounds: {fileID: 0}
-  turretDestroySound: {fileID: 0}
-  upgradeButtons: {fileID: 8199525345400361679, guid: a97c4fe270ace4f7e8137c4e3e8c21c1, type: 3}
-  upgradingTurrets: {fileID: 0}
-  spawnTile: {fileID: 0}
-  isUpgrading: 0
-  boolNumber: 0
-  autoTurret: {fileID: 5414848739479585427}
 --- !u!1 &5414848739479585427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1047,7 @@ GameObject:
   - component: {fileID: 4376370889587699035}
   - component: {fileID: 8590839494406466799}
   - component: {fileID: 7050315282089738225}
-  - component: {fileID: 8262158406024146192}
+  - component: {fileID: 1203116271428727620}
   m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
@@ -1154,7 +1132,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8262158406024146192
+--- !u!114 &1203116271428727620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1163,23 +1141,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5414848739479585427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75500972379c446f2b684c92d63af1cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5767cb07883073148954102be20ee3eb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AutoTurret1
+  m_EditorClassIdentifier: 
   target: {fileID: 0}
   targetTag: Finish
   maxRange: 100
   followSpeed: 5
-  targetOffset: {x: 0, y: 0, z: 0}
+  targetOffset: {x: 0, y: 1, z: 0}
   targetAcquired: 0
   onTarget: 0
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
+  heal: 1
   bulletPrefab: {fileID: 2599517040382706774, guid: 4788adec276414bc6904c0965034f208, type: 3}
   bulletSpawn: {fileID: 955905665023871613}
   shootDelay: 0.5
   velocityMult: 50
+  turretDmg: -1
   gunSounds: {fileID: 1406030590898290587}
   shootSound: {fileID: 8300000, guid: ea1980e9d5317cf439ed49e320d555aa, type: 3}
   ejectShells: 0
@@ -1189,6 +1169,8 @@ MonoBehaviour:
   toggleFlash: 1
   muzzleFlash: {fileID: 4982665599990642396}
   objsInRange: []
+  speedLevel: 1
+  rangeLevel: 1
 --- !u!1 &6013008136021312988
 GameObject:
   m_ObjectHideFlags: 0
