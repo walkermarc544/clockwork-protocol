@@ -44,6 +44,18 @@ public class MenuButtons : MonoBehaviour
             return;
         }
     }
+    public void LastSceneCredits()
+    {
+        if(SceneManager.GetActiveScene().buildIndex - 3 >= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        }
+        else
+        {
+            Debug.Log("SCENE NOT LOADED. SCENE INDEX OUT OF RANGE");
+            return;
+        }
+    }
     public void ApplyOptions()
     {
         //APPLY OPTIONS HERE
