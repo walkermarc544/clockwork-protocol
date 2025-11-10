@@ -43,6 +43,16 @@ public class BuildManager : MonoBehaviour
             Back();
         }
     }
+    public void UpgradeDmg()
+    {
+        if (selectedTile != null && resourceManager.GetComponent<ResourceManager>().Count >= 3)
+        {
+            AutoTurret selected = selectedTile.buildPrefab.GetComponentInChildren<AutoTurret>();
+            selected.turretDmg += selected.turretDmg - 1;
+            ResourceManager.Instance.AddResource(-6);
+            Back();
+        }
+    }
     public void BuildTurret(int turretIndex)
     {
         GameObject[] turrets = turretPrefabs;
