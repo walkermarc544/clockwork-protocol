@@ -181,4 +181,4 @@ MonoBehaviour:
   dmgDelay: 2
   resourceDrop: {fileID: 2313978395767544315, guid: f578a3c4300f60643a5a36108a995e20, type: 3}
   enemySounds: {fileID: 3402411608748159841, guid: e08306f4ca9134c2c81854bd7841c3a9, type: 3}
-  enemyHitSound: {fileID: 8300000, guid: 4d686c444afbb48cfa94a01a0f6937a4, type: 3}
+  enemyHitSound: {fileID: 8300000, guid: 7e54d7728bbd41fe7881ac21f04215ed, type: 3}

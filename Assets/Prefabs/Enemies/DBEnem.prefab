@@ -181,6 +181,6 @@ MonoBehaviour:
   destroyTurret: {fileID: 0}
   boostResource: {fileID: 0}
   enemyDBSounds: {fileID: 4996266682610322230, guid: f7e42a8a232244703ba58f527931bc6e, type: 3}
-  enemyDBHitSound: {fileID: 8300000, guid: 4d686c444afbb48cfa94a01a0f6937a4, type: 3}
+  enemyDBHitSound: {fileID: 8300000, guid: 7e54d7728bbd41fe7881ac21f04215ed, type: 3}
   turretDestroySounds: {fileID: 1375396947289096785, guid: f7e42a8a232244703ba58f527931bc6e, type: 3}
   turretDestroySound: {fileID: 8300000, guid: 0c94274bdd6ba4f14a6c1ae02279d1c2, type: 3}
