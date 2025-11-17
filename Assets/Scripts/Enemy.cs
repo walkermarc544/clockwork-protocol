@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         myAgent = GetComponent<NavMeshAgent>();
         target = GameObject.FindWithTag(targetTag).transform;
         curHealth = maxHealth;
-        resourceChance = Random.Range(1, 5);
+        resourceChance = Random.Range(1, 3);//Resource drops chance
         
     }
 
@@ -38,7 +38,6 @@ public class Enemy : MonoBehaviour
             {
                 Instantiate(resourceDrop, transform.position, Quaternion.identity);
             }
-            resourceChance = Random.Range(1, 5);
             Destroy(gameObject);
         }
         if (follow && target != null)

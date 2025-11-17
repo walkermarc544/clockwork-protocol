@@ -38,6 +38,8 @@ public class AutoTurret : MonoBehaviour
     private RaycastHit hit;
     private bool isShooting;
     private float cooldown;
+    private bool targetLock;
+
     public int findClosest(GameObject[] input)//Find Closest Object Within Array
     {
         int closest = 0;
@@ -73,12 +75,15 @@ public class AutoTurret : MonoBehaviour
         objsInRange = GameObject.FindGameObjectsWithTag(targetTag);//Get All Players
         if (objsInRange.Length > 0)
         {
-            target = objsInRange[findClosest(objsInRange)];
+            if(!target)
+            {
+                target = objsInRange[findClosest(objsInRange)];
+            }
         if (Vector3.Distance(transform.position, target.transform.position) <= maxRange)//Check if Object is Within Range
         {
             Vector3 targetPos = new Vector3(target.transform.position.x + targetOffset.x, target.transform.position.y + targetOffset.y, target.transform.position.z + targetOffset.z);
             Quaternion targetRot = Quaternion.LookRotation(targetPos - this.transform.position, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, followSpeed);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, followSpeed);//Follow target
             targetAcquired = true;
         }
         else

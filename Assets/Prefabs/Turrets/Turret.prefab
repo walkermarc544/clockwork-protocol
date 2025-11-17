@@ -1072,7 +1072,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: Enemy
   maxRange: 100
-  followSpeed: 5
+  followSpeed: 2
   targetOffset: {x: 0, y: 1, z: 0}
   targetAcquired: 0
   onTarget: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   heal: 0
   bulletPrefab: {fileID: 2599517040382706774, guid: 52fa5cbcb1685844e97edb25c195a1a3, type: 3}
   bulletSpawn: {fileID: 955905665023871613}
-  shootDelay: 0.25
+  shootDelay: 0.09
   velocityMult: 50
   turretDmg: 5
   gunSounds: {fileID: 1406030590898290587}

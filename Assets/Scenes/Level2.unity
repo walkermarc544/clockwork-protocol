@@ -7941,6 +7941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 8199525345400361679, guid: 858009bc37826e844b500cec4081bb3b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10966,7 +10970,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1266902891}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoseCondition, Assembly-CSharp
         m_MethodName: Restarted
         m_Mode: 1
@@ -15244,10 +15248,10 @@ GameObject:
   - component: {fileID: 1266902894}
   - component: {fileID: 1266902893}
   - component: {fileID: 1266902892}
-  - component: {fileID: 1266902891}
   - component: {fileID: 1266902890}
+  - component: {fileID: 1266902896}
   m_Layer: 8
-  m_Name: Cube
+  m_Name: GameManager
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15280,23 +15284,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1266902891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266902889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2128752a68c7747689b850a0c2c13dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  youLose: {fileID: 1360661880}
-  healthText: {fileID: 1172968808}
-  loseText: {fileID: 77135820}
-  Health: 5
-  HealHitMeter: 30
 --- !u!65 &1266902892
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15389,6 +15376,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1267573246}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266902896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266902889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1aa63aa81070f40bd7fa6995a96935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  youLose: {fileID: 1360661880}
+  healthText: {fileID: 1172968808}
+  loseText: {fileID: 77135820}
+  Health: 5
+  HealHitMeter: 30
+  winScene: 0
+  spawnScript: {fileID: 1646805083}
 --- !u!1 &1267573245
 GameObject:
   m_ObjectHideFlags: 0
@@ -19656,20 +19662,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5ba8cb775a2bb84e960e782a9e046be, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WaveSpawner
+  m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 1822413235817193916, guid: cebfd4851106a0447a8dc9604349a627, type: 3}
   - {fileID: 1822413235817193916, guid: ff7c08908d517406ab2265612af9bf01, type: 3}
-  - {fileID: 8867256613144698917, guid: 078f4b865d590964abf99f9d09854968, type: 3}
-  - {fileID: 8867256613144698917, guid: 1ff96739394b9cb4ea5692a8339271ae, type: 3}
+  - {fileID: 1822413235817193916, guid: e08306f4ca9134c2c81854bd7841c3a9, type: 3}
+  - {fileID: 1822413235817193916, guid: ff7c08908d517406ab2265612af9bf01, type: 3}
   enemyWaveToggle: 00000000030000000200000005000000
   currentwaveUI: {fileID: 2055799535}
   spawns:
   - {fileID: 1813640835}
   - {fileID: 1723631902}
-  spawnDelay: 5
-  spawnVariance: 1.5
+  spawnDelay: 2
+  spawnVariance: 0.5
   newwaveDelay: 15
-  waveDifficultyMult: 1
+  curWave: 0
+  spawnCount: 0
+  waveDifficultyMult: 1.5
 --- !u!4 &1646805084
 Transform:
   m_ObjectHideFlags: 0

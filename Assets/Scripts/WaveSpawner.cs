@@ -16,8 +16,8 @@ public class WaveSpawner : MonoBehaviour
     float timePassed = 0.0f;
     float waveTime = 30.0f;
     public float newwaveDelay = 15.0f;
-    private int curWave;
-    private int spawnCount;
+    public int curWave;
+    public int spawnCount;
     private int spawnMax = 15;
     private bool isSpawning = false;
     private bool[] toggleEnemy;
