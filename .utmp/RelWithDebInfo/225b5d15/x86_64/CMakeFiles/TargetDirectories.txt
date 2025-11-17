@@ -1,0 +1,5 @@
+C:/A! Unity/clockwork-protocol/clockwork-protocol/.utmp/RelWithDebInfo/225b5d15/x86_64/CMakeFiles/edit_cache.dir
+C:/A! Unity/clockwork-protocol/clockwork-protocol/.utmp/RelWithDebInfo/225b5d15/x86_64/CMakeFiles/rebuild_cache.dir
+C:/A! Unity/clockwork-protocol/clockwork-protocol/.utmp/RelWithDebInfo/225b5d15/x86_64/GameActivity/CMakeFiles/game.dir
+C:/A! Unity/clockwork-protocol/clockwork-protocol/.utmp/RelWithDebInfo/225b5d15/x86_64/GameActivity/CMakeFiles/edit_cache.dir
+C:/A! Unity/clockwork-protocol/clockwork-protocol/.utmp/RelWithDebInfo/225b5d15/x86_64/GameActivity/CMakeFiles/rebuild_cache.dir

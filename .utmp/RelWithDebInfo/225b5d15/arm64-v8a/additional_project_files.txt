@@ -1,0 +1,17 @@
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\GAToUnityCallbacks.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroEnd.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroHeaderBegin.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\MacroSourceBegin.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAApplication.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAConfiguration.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGADebug.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAEvents.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAInput.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboard.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGASoftKeyboardCallbacks.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGATypes.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UGAVersion.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGACallbacks.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAConfigurationCallbacks.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAKeyEventCallbacks.h
+C:\A! Unity\clockwork-protocol\clockwork-protocol\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\UnityToGAMotionEventCallbacks.h
