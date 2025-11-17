@@ -35,7 +35,11 @@ public class BuildManager : MonoBehaviour
     }
     public void UpgradeSpeed()
     {
-        if (selectedTile != null && resourceManager.GetComponent<ResourceManager>().Count >= 3)
+        if (resourceManager.GetComponent<ResourceManager>().Count < 2)
+        {
+            return;
+        }
+            if (selectedTile != null && resourceManager.GetComponent<ResourceManager>().Count >= 3)
         {
             AutoTurret selected = selectedTile.buildPrefab.GetComponentInChildren<AutoTurret>();
             selected.speedLevel++;
@@ -45,7 +49,11 @@ public class BuildManager : MonoBehaviour
     }
     public void UpgradeDmg()
     {
-        if (selectedTile != null && resourceManager.GetComponent<ResourceManager>().Count >= 3)
+        if (resourceManager.GetComponent<ResourceManager>().Count < 3)
+        {
+            return;
+        }
+            if (selectedTile != null && resourceManager.GetComponent<ResourceManager>().Count >= 3)
         {
             AutoTurret selected = selectedTile.buildPrefab.GetComponentInChildren<AutoTurret>();
             selected.turretDmg += selected.turretDmg - 1;

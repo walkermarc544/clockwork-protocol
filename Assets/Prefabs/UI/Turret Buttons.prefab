@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Firing Rate: 1 Bullet every 0.05s
+  m_text: 'Firing Rate: 1 Bullet every 0.09s
 
     Damage Rate: 3 HP every Hit'
   m_isRightToLeft: 0
