@@ -828,8 +828,9 @@ GameObject:
   - component: {fileID: 3673328645281859666}
   - component: {fileID: 1487627963672799866}
   - component: {fileID: 3205110302390715219}
+  - component: {fileID: -8397452788613489516}
   m_Layer: 6
-  m_Name: TankEnemy
+  m_Name: TankEnemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,7 +907,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822413235817193916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4420894788f0d1e4ab51f76e66e1db83, type: 3}
   m_Name: 
@@ -914,7 +915,30 @@ MonoBehaviour:
   target: {fileID: 0}
   enemySprite: {fileID: 0}
   targetTag: Finish
-  follow: 1
+  follow: 0
+  maxHealth: 250
+  curHealth: 250
+  dmg: 25
+  dmgDelay: 2
+  resourceDrop: {fileID: 2313978395767544315, guid: f578a3c4300f60643a5a36108a995e20, type: 3}
+  enemySounds: {fileID: 3402411608748159841}
+  enemyHitSound: {fileID: 8300000, guid: 7e54d7728bbd41fe7881ac21f04215ed, type: 3}
+--- !u!114 &-8397452788613489516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822413235817193916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139075d46752d41f5875e98799bbc3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy2
+  target: {fileID: 0}
+  enemySprite: {fileID: 0}
+  targetTag: Finish
+  follow: 0
   maxHealth: 250
   curHealth: 250
   dmg: 25
