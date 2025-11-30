@@ -3542,13 +3542,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 14.78, y: 126.3, z: 14.5}
+  m_LocalRotation: {x: -0.000000022351738, y: 0.7071068, z: -0.7071068, w: -0.000000022351738}
+  m_LocalPosition: {x: 15.714708, y: 126.3, z: 13.781208}
   m_LocalScale: {x: 0.44049, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14479,6 +14479,8 @@ MonoBehaviour:
   spawnDelay: 1
   spawnVariance: 1.5
   newwaveDelay: 7
+  curWave: 0
+  spawnCount: 0
   waveDifficultyMult: 2
 --- !u!4 &1317283771
 Transform:
@@ -15744,10 +15746,10 @@ GameObject:
   - component: {fileID: 1403604260}
   - component: {fileID: 1403604259}
   - component: {fileID: 1403604258}
-  - component: {fileID: 1403604262}
   - component: {fileID: 1403604263}
+  - component: {fileID: 1403604264}
   m_Layer: 8
-  m_Name: Cube
+  m_Name: Game Manager
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15845,23 +15847,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1949108609}
   m_LocalEulerAnglesHint: {x: 0, y: 181.281, z: 0}
---- !u!114 &1403604262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403604257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2128752a68c7747689b850a0c2c13dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  youLose: {fileID: 424592603}
-  healthText: {fileID: 1744321312}
-  loseText: {fileID: 1496793959}
-  Health: 5
-  HealHitMeter: 30
 --- !u!54 &1403604263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15889,6 +15874,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1403604264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403604257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1aa63aa81070f40bd7fa6995a96935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  youLose: {fileID: 424592603}
+  healthText: {fileID: 1744321312}
+  loseText: {fileID: 1496793959}
+  Health: 5
+  HealHitMeter: 30
+  winScene: 0
+  endlessMode: 0
+  spawnScript: {fileID: 1317283770}
 --- !u!1 &1408994600
 GameObject:
   m_ObjectHideFlags: 0
@@ -21306,7 +21311,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1403604262}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoseCondition, Assembly-CSharp
         m_MethodName: Restarted
         m_Mode: 1
@@ -21902,8 +21907,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949108608}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.3, y: 0, z: 11}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 12.214682, y: 0, z: -34.738785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22111,7 +22116,7 @@ Transform:
   - {fileID: 1489498874}
   - {fileID: 1701086480}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1958385779
 GameObject:
   m_ObjectHideFlags: 0
