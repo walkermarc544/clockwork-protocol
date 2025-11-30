@@ -15401,7 +15401,8 @@ MonoBehaviour:
   loseText: {fileID: 77135820}
   Health: 5
   HealHitMeter: 30
-  winScene: 0
+  winScene: 6
+  endlessMode: 0
   spawnScript: {fileID: 1646805083}
 --- !u!1 &1267573245
 GameObject:
@@ -26429,8 +26430,8 @@ SceneRoots:
   - {fileID: 8572632}
   - {fileID: 1205098335}
   - {fileID: 807747241}
-  - {fileID: 1481215602}
   - {fileID: 1926674665}
+  - {fileID: 1481215602}
   - {fileID: 9363719}
   - {fileID: 909891585}
   - {fileID: 1910210000}

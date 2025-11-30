@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private int HealHits = 0;
     public int HealHitMeter = 30;
     public int winScene;
+    public bool endlessMode;
     public WaveSpawner spawnScript;
 
     void Start()
@@ -33,7 +34,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(spawnScript.curWave > 3 && spawnScript.spawnCount == 0)
+            if(spawnScript.curWave > 3 && spawnScript.spawnCount == 0 && !endlessMode)
             {
                 winGame();
             }
