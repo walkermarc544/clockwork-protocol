@@ -45,7 +45,7 @@ public class PauseButton : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex - 2 >= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+            SceneManager.LoadScene(0);
         }
         else
         {
